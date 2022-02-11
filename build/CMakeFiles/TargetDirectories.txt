@@ -1,0 +1,3 @@
+/home/replica/geant4_works/g4_minimal-main/build/CMakeFiles/rebuild_cache.dir
+/home/replica/geant4_works/g4_minimal-main/build/CMakeFiles/edit_cache.dir
+/home/replica/geant4_works/g4_minimal-main/build/CMakeFiles/g4_minimal.dir
