@@ -6,7 +6,7 @@ energy_bin = sys.argv[2]
 particle = sys.argv[3]
 exec('count_list = [' + sys.argv[4] + ']')
 mode = sys.argv[5]
-dir = sys.argv[6]
+output_dir = sys.argv[6]
 
 energy_list = list(range(0, energy, energy_bin))
 total_count = sum(count_list)
@@ -19,6 +19,9 @@ plt.xlabel('Energy(MeV)')
 plt.ylabel('Count')
 plt.yscale(mode)
 
-figure_name = dir + '/' + particle + '_energy_spectrum_' + mode + '.png'
-plt.savefig(figure_name)
-os.system('viu ' + figure_name)
+figure_name = particle + '_energy_spectrum_' + mode + '.png'
+plt.savefig(output_dir + '/' + figure_name)
+
+os.system('viu ' + output_dir + '/' + figure_name '>> ' +  output_dir + '/raw_result.out')
+os.system('echo "' + figure_name + '" >> ' +  output_dir + '/raw_result.out')
+os.system('echo "' + total_count + '" >> ' +  output_dir + '/raw_result.out')
