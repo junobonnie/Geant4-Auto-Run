@@ -89,9 +89,11 @@ echo "Making..."
 make -j12
 
 printf "\n\033[31m<< 3. Start Simulation >>\033[0m\n\n"
-output_dir="results"
+output_root_dir="results"
+mkdir -p $output_root_dir
+output_dir = $output_root_dir"/"$name"_"$energy"MeV_"$energy_bin"MeV_"$end_event_num"event_"$(date +%Y-%m-%d-%T)
 mkdir -p $output_dir
-filename=$output_dir"/"$name"_"$energy"MeV_"$energy_bin"MeV_"$end_event_num"event_"$(date +%Y-%m-%d-%T)".out"
+filename=$output_dir"/raw_result.out"
 echo "Simulation running..."
 ./g4_minimal run.mac > $filename
 echo "Output file is $filename"
@@ -99,15 +101,13 @@ echo "Output file is $filename"
 printf "\n\033[31m<< 4. Draw Plots >>\033[0m\n\n"
 echo "Drawing..."
 echo "" >> $filename
-for mode in norm log
+for mode in linear log
 do
 	for particle in e-: e+: mu-: mu+: proton: anti_proton: neutron: anti_neutron: alpha: gamma:
 	do
-		printf "	\033[31m<< ${particle//:/} histogram($mode) >>\033[0m\n" >> $filename
 		value=$(cat $filename | grep -w $particle)
 		value=${value//$particle/}
-		shellplot "$value" "$mode" 'mute' >> $filename
-		echo "" >> $filename
+		python3 plot.py $energy $energy_bin ${particle//:/} ${value// /} $mode $output_dir
 	done
 done
 
