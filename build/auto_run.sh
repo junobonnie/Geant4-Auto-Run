@@ -91,7 +91,7 @@ make -j12
 printf "\n\033[31m<< 3. Start Simulation >>\033[0m\n\n"
 output_root_dir="results"
 mkdir -p $output_root_dir
-output_dir = $output_root_dir"/"$name"_"$energy"MeV_"$energy_bin"MeV_"$end_event_num"event_"$(date +%Y-%m-%d-%T)
+output_dir=$output_root_dir"/"$name"_"$energy"MeV_"$energy_bin"MeV_"$end_event_num"event_"$(date +%Y-%m-%d-%T)
 mkdir -p $output_dir
 filename=$output_dir"/raw_result.out"
 echo "Simulation running..."
