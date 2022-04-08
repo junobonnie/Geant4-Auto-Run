@@ -38,6 +38,7 @@ set(SCRIPTS
   run_proton.mac
   run_neutron.mac
   vis.mac
+  auto_run.sh
   )
 
 foreach(_script ${SCRIPTS})
