@@ -2,7 +2,7 @@
 
 echo "														"
 echo "		G E A N T 4   A U T O - R U N					"
-echo "		Version 1.0    last modified 2022-02-10			"
+echo "		Version 1.0    last modified 2022-04-08			"
 echo "														"
 echo "		Copyright (C) 2022~								"
 echo "		Developed by Replica							"
