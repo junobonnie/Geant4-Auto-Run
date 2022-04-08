@@ -12,7 +12,7 @@ output_dir = sys.argv[6]
 energy_list = list(range(0, energy, energy_bin))
 total_count = sum(count_list)
 
-plt.figure(figsize = (10,5), dpi = 72)
+plt.figure(figsize = (10,5), dpi = 720)
 plt.text(0, max(count_list), 'Total Number of ' + particle + ': ' + str(total_count))
 plt.bar(energy_list, count_list, width = energy_bin)
 plt.title(particle + ' energy spectrum')
