@@ -39,6 +39,7 @@ set(SCRIPTS
   run_neutron.mac
   vis.mac
   auto_run.sh
+  plot.py
   )
 
 foreach(_script ${SCRIPTS})
