@@ -18,7 +18,7 @@
 #include "G4UImanager.hh"
 
 #include "DetectorConstruction.hh"
-#include "QBBC.hh"
+#include "PhysicsList.hh"
 #include "ActionInitialization.hh"
 
 #include "G4VisExecutive.hh"
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 
     // Set mandatory initialization classes
     runManager->SetUserInitialization(new DetectorConstruction);
-    runManager->SetUserInitialization(new QBBC);
+    runManager->SetUserInitialization(new PhysicsList);
     runManager->SetUserInitialization(new ActionInitialization);
 
     // Initialize G4 kernel
