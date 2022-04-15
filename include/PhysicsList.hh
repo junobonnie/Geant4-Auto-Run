@@ -1,5 +1,5 @@
-#ifndef B3PhysicsList_h
-#define B3PhysicsList_h 1
+#ifndef PhysicsList_h
+#define PhysicsList_h 1
 
 #include "G4VModularPhysicsList.hh"
 
