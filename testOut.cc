@@ -95,7 +95,7 @@ int main( int argc, const char *argv[]) {
       out
         << " " << i // event
         << " " << j // secondary
-        << " " << p->PDGid() // particle type
+        << " " << p->PDGid() // particle PDG id
         << " " << p->ke() // KE
         << " " << p->x()
         << " " << p->y()
