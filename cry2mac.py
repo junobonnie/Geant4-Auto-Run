@@ -14,7 +14,7 @@ results = '''# Can be run in batch, without graphic
 /tracking/verbose 0'''
 #particles = ['neutron', 'proton', 'pion', 'kaon', '-mu', '-e', 'gamma']
 particles = ['neutron', 'proton', 'neutron', 'neutron', 'mu-', 'e-', 'gamma']
-with open('/opt/cry/1.7/cry_v1.7/test/shower.out', 'r') as f:
+with open('shower.out', 'r') as f:
     lines = f.readlines()
     for line in lines[1:]:
         line = combine_space(line)
