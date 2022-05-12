@@ -12,7 +12,7 @@ results = '''# Can be run in batch, without graphic
 /run/verbose 0
 /event/verbose 0
 /tracking/verbose 0'''
-#particles = ['neutron', 'proton', 'pion', 'kaon', '-mu', '-e', 'gamma']
+#particles = ['neutron', 'proton', 'pion', 'kaon', 'mu', 'e', 'gamma']
 particles = ['neutron', 'proton', 'neutron', 'neutron', 'mu-', 'e-', 'gamma']
 with open('shower.out', 'r') as f:
     lines = f.readlines()
