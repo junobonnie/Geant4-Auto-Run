@@ -38,6 +38,7 @@
 
 # To superimpose all of the events from a given run:
 /vis/scene/endOfEventAction accumulate
+/vis/scene/endOfRunAction accumulate # if you using cry
 
 # Re-establish auto refreshing and verbosity:
 /vis/viewer/set/autoRefresh true
