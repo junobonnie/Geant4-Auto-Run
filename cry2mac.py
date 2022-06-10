@@ -34,4 +34,4 @@ with open('shower.out', 'r') as f:
 ''' %(particle_name, k_E, x, y, vx, vy, -float(vz))
 
 print(results)
-print(len(lines))
+#print(len(lines))
