@@ -2,7 +2,7 @@
 
 echo "														"
 echo "		G E A N T 4   A U T O - R U N					"
-echo "		Version 1.0    last modified 2022-04-08			"
+echo "		Version 1.0    last modified 2022-06-10			"
 echo "														"
 echo "		Copyright (C) 2022~								"
 echo "		Developed by Replica							"
@@ -63,9 +63,9 @@ echo "# Can be run in batch, without graphic
 /gun/position 0 0 -5 m
 /gun/energy $energy MeV
 
-/run/beamOn $end_event_num" > ../run.mac
+/run/beamOn $end_event_num" > run.mac
 
-echo "Make ../run.mac"
+echo "Make run.mac"
 
 echo "#ifndef CONFIGURE_HH
 #define CONFIGURE_HH
@@ -113,6 +113,7 @@ done
 
 printf "\n\033[31m<< 5. Print Results >>\033[0m\n\n"
 is_print="false"
+PRE_IFS=$IFS
 IFS=''
 while read line || [ -n "$line" ]
 do
@@ -123,4 +124,5 @@ do
 		echo $line
 	fi
 done < $filename
+IFS=$PRE_IFS
 printf "\033[32;5mD O N E "'!!!'"\033[0m\n\n"
