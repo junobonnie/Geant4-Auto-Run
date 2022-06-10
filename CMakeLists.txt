@@ -35,10 +35,10 @@ target_link_libraries(g4_minimal ${Geant4_LIBRARIES})
 #
 set(SCRIPTS
   run.mac
-  run_proton.mac
-  run_neutron.mac
+  run_cry.mac
   vis.mac
   auto_run.sh
+  cry_auto_run.sh
   plot.py
   )
 
