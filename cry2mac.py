@@ -7,7 +7,7 @@ def combine_space(text):
     return text
 
 results = '''# Can be run in batch, without graphic
-# or interactively: Idle> /control/execute run.mac
+# or interactively: Idle> /control/execute run_cry.mac
 
 # Verbose
 /control/verbose 0
