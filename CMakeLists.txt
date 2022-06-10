@@ -38,6 +38,7 @@ set(SCRIPTS
   auto_run.sh
   cry_auto_run.sh
   plot.py
+  cry2mac.py
   )
 
 foreach(_script ${SCRIPTS})
