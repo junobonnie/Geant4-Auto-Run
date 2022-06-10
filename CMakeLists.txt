@@ -34,8 +34,6 @@ target_link_libraries(g4_minimal ${Geant4_LIBRARIES})
 # working directory.
 #
 set(SCRIPTS
-  run.mac
-  run_cry.mac
   vis.mac
   auto_run.sh
   cry_auto_run.sh
