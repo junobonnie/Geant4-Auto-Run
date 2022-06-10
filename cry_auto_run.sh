@@ -122,6 +122,7 @@ done
 
 printf "\n\033[31m<< 5. Print Results >>\033[0m\n\n"
 is_print="false"
+PRE_IFS=$IFS
 IFS=''
 while read line || [ -n "$line" ]
 do
@@ -132,4 +133,5 @@ do
                 echo $line
         fi
 done < $filename
+IFS=$PRE_IFS
 printf "\033[32;5mD O N E "'!!!'"\033[0m\n\n"
