@@ -65,17 +65,17 @@ date $set_date
 latitude $latitude
 altitude $altitude
 subboxLength 5
-" > ../setup.file
+" > setup.file
 
-echo "Make ../setup.file"
+echo "Make setup.file"
 
-$CRY_TEST_DIR/testOut ../setup.file $end_event_num
+$CRY_TEST_DIR/testOut setup.file $end_event_num
 #mv $CRY_TEST_DIR/shower.out .
 echo "Make $CRY_TEST_DIR/shower.out"
 
-python3 cry2mac.py > ../run_cry.mac
+python3 cry2mac.py > run_cry.mac
 
-echo "Make ../run_cry.mac"
+echo "Make run_cry.mac"
 
 echo "#ifndef CONFIGURE_HH
 #define CONFIGURE_HH
@@ -104,7 +104,7 @@ mkdir -p $output_root_dir
 output_dir=$output_root_dir"/"$name"_"$altitude"m_"$latitude"deg_"$set_date"_"$end_event_num"event_"$(date +%Y-%m-%d-%T)mkdir -p $output_dir
 filename=$output_dir"/raw_result.out"
 echo "Simulation running..."
-./g4_minimal ../run_cry.mac > $filename
+./g4_minimal run_cry.mac > $filename
 echo "Output file is $filename"
 
 printf "\n\033[31m<< 4. Draw Plots >>\033[0m\n\n"
