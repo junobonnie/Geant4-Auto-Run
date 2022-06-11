@@ -3,7 +3,7 @@ printf '\033[32mSetting CRY Environment\033[0m\n\n'
 printf "Set cry test directory location : "
 read DIR
 export CRY_TEST_DIR=$DIR
-echo "\033[32mOK!\033[0m"
+printf '\033[32mOK!\033[0m'
 
 sudo chmod 777 *.sh
 
