@@ -37,7 +37,6 @@ set(SCRIPTS
   vis.mac
   auto_run.sh
   cry_auto_run.sh
-  set_cry_env.sh
   plot.py
   cry2mac.py
   )
