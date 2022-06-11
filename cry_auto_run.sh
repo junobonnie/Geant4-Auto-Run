@@ -68,9 +68,10 @@ subboxLength 5
 " > setup.file
 
 echo "Make setup.file"
-
+ln -s $CRY_TEST_DIR/data .
 $CRY_TEST_DIR/testOut setup.file $end_event_num
 #mv $CRY_TEST_DIR/shower.out .
+
 echo "Make $CRY_TEST_DIR/shower.out"
 
 python3 cry2mac.py > run_cry.mac
@@ -101,8 +102,12 @@ make -j12
 printf "\n\033[31m<< 3. Start Simulation >>\033[0m\n\n"
 output_root_dir="results"
 mkdir -p $output_root_dir
-output_dir=$output_root_dir"/"$name"_"$altitude"m_"$latitude"deg_"$set_date"_"$end_event_num"event_"$(date +%Y-%m-%d-%T)mkdir -p $output_dir
+
+output_dir=$output_root_dir"/"$name"_"$altitude"m_"$latitude"deg_"$set_date"_"$end_event_num"event_"$(date +%Y-%m-%d-%T)
+mkdir -p $output_dir
+
 filename=$output_dir"/raw_result.out"
+
 echo "Simulation running..."
 ./g4_minimal run_cry.mac > $filename
 echo "Output file is $filename"
