@@ -41,7 +41,7 @@ else
         done
         echo ""
 
-        echo "Select altitude : "
+        echo "Select altitude(m) : "
         PS3=">>> "
         select altitude in "0" "2100" "11300"
         do
