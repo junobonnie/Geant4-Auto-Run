@@ -2,7 +2,7 @@
 
 echo "                                                                                                          "
 echo "          G E A N T 4   C R Y - A U T O - R U N                                   "
-echo "          Version 1.0    last modified 2022-06-10                 "
+echo "          Version 1.0    last modified 2022-06-16                 "
 echo "                                                                                                          "
 echo "          Copyright (C) 2022~                                                             "
 echo "          Developed by Replica                                                    "
@@ -32,14 +32,22 @@ if [ ${1:-'mode1'} == 'mode2' ]; then
         echo ""
 else
         printf '\033[32m[mode1]\033[0m\n\n'
-        echo "Set particle name : "
-        printf ">>> "
-        read name
+        echo "Select particle name : "
+        PS3=">>> "
+        select name in "Neutron" "Proton" "Gamma" "Electron" "Muon" "Pion" "Kaon"
+        do
+          echo "The one you have selected is: $name"
+          break
+        done
         echo ""
 
-        echo "Set altitude(m) : "
-        printf ">>> "
-        read altitude
+        echo "Select altitude : "
+        PS3=">>> "
+        select altitude in "0" "2100" "11300"
+        do
+          echo "The one you have selected is: $altitude m"
+          break
+        done
         echo ""
 
         echo "Set latitude(deg) : "
@@ -58,14 +66,21 @@ else
         echo ""
 fi
 
-echo "returnNeutrons 1
+echo "returnNeutrons 0
 returnProtons 0
 returnGammas 0
+returnElectrons 0
+returnMuons 0
+returnPions 0
+returnKaons 0
 date $set_date
 latitude $latitude
 altitude $altitude
 subboxLength 5
-" > setup.file
+" > temp
+
+awk '/'"$name"'/{$2="1"}1' temp > setup.file
+rm temp
 
 echo "Make setup.file"
 ln -s $CRY_TEST_DIR/data .
