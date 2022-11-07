@@ -21,10 +21,10 @@ PhysicsList::PhysicsList()
   // Radioactive decay
   RegisterPhysics(new G4RadioactiveDecayPhysics());
   
-  // Radioactive decay
+  // Ion Binary Cascade
   RegisterPhysics(new G4IonBinaryCascadePhysics());
   
-  // Radioactive decay
+  // Hadron Physics high precision
   RegisterPhysics(new G4HadronPhysicsQGSP_BIC_HP());
 }
 
