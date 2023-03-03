@@ -1,4 +1,4 @@
-from particle import Particle
+#from particle import Particle
 
 def combine_space(text):
     text = text.strip()
@@ -14,7 +14,7 @@ results = '''# Can be run in batch, without graphic
 /run/verbose 0
 /event/verbose 0
 /tracking/verbose 0'''
-#particles = ['neutron', 'proton', 'pion', 'kaon', '-mu', '-e', 'gamma']
+particles = ['neutron', 'proton', 'pion', 'kaon', '-mu', '-e', 'gamma']
 #particles = ['neutron', 'proton', 'neutron', 'neutron', 'mu-', 'e-', 'gamma']
 with open('shower.out', 'r') as f:
     lines = f.readlines()
@@ -22,9 +22,9 @@ with open('shower.out', 'r') as f:
         line = combine_space(line)
         #print(line.split(' '))
         particle_id, k_E, x, y, z, vx, vy, vz = line.split(' ')[2:]
-        particle_name = Particle.from_pdgid(particle_id).name
-        if particle_name == 'n':
-            particle_name = 'neutron'
+        particle_name = particles[int(particle_id)] #Particle.from_pdgid(particle_id).name
+        #if particle_name == 'n':
+        #    particle_name = 'neutron'
         results += '''
 /gun/particle %s
 /gun/energy %s MeV
